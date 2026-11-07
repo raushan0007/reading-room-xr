@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reading Room XR</title>
+  <style>
+    html, body { margin: 0; height: 100%; overflow: hidden; background: #070b10; font-family: system-ui, sans-serif; }
+    #intro { position: absolute; top: 12px; left: 12px; color: #cfe0f2; font-size: 13px; line-height: 1.5;
+      background: rgba(10,16,24,0.8); padding: 10px 14px; border-radius: 10px; max-width: 360px; pointer-events: none; }
+    #intro b { color: #ffd34d; }
+  </style>
+</head>
+<body>
+  <div id="intro">
+    <b>Reading Room XR</b>: hands-first radiology review for Meta Quest.<br/>
+    On Quest: press <b>ENTER VR</b>, put the controllers down, and use your hands.<br/>
+    On desktop: left-click = pinch, right-drag = look, wheel = scroll slices, keys 1–6 = tools.<br/>
+    All images are synthetic phantoms. Not for diagnosis.
+  </div>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.187.0/examples/jsm/"
+    }
+  }
+  </script>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
