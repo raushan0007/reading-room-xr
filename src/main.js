@@ -151,6 +151,7 @@ placeOnArc(worklist, -66, 0.95, -0.02);
 scene.add(worklist);
 const wlCard = new TextCard({ w: 0.32, h: 0.42, title: 'Worklist', lines: ['Pinch a study to load it into the focused (blue) viewport.'] });
 worklist.add(wlCard.mesh);
+const worklistButtons = [];
 studies.forEach((s, i) => {
   const b = new Button({
     w: 0.28, h: 0.07, label: s.label, sub: `${s.date} · ${s.nz} images`,
@@ -158,6 +159,7 @@ studies.forEach((s, i) => {
   });
   b.mesh.position.set(0, 0.06 - i * 0.085, 0.003);
   worklist.add(b.mesh); input.add(b.mesh);
+  worklistButtons.push(b);
 });
 
 // ------------------------------------------------------------------ report (right)
@@ -219,3 +221,5 @@ renderer.setAnimationLoop(() => {
 });
 
 window.__app = app; // for automated smoke tests
+// scene handles for automated tests and the emulator demo recording
+window.__rr = { scene, renderer, toolButtons, syncBtn, helpClose, layoutBtn, resetBtn, clearBtn, worklistButtons, studies, help };
